@@ -3,6 +3,7 @@ let currentResult = defaultResult;
 let logEntries = [];
 
 //  alert(typeof logEntries);
+// to chech
 
 function getUserNumberInput() {
   return parseInt(userInput.value);
