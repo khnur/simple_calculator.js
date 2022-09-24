@@ -25,22 +25,24 @@ function writeToLog(operationID, prevResult, operationNumber, newResult) {
 }
 
 function calculateResult(calculationType) {
+    const enteredNumber = getUserNumberInput();
     if (
         calculationType !== 'ADD' &&
-        calculationType !== 'SUBSTRACT' &&
+        calculationType !== 'SUBTRACT' &&
         calculationType !== 'MULTIPLY' &&
-        calculationType !== 'DIVIDE'
+        calculationType !== 'DIVIDE' ||
+        !enteredNumber
     ) {
         return;
     }
-    const enteredNumber = getUserNumberInput();
+
     const initialResult = currentResult;
     let mathOperator;
 
     if (calculationType === 'ADD') {
         currentResult += enteredNumber;
         mathOperator = '+';
-    } else if (calculateResult === 'SUBTRACT') {
+    } else if (calculationType === 'SUBTRACT') {
         currentResult -= enteredNumber;
         mathOperator = '-';
     } else if (calculationType === 'MULTIPLY') {
